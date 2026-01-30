@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router";
+import { useParams, useNavigate } from "react-router-dom";
 import type { TMovie } from "../types/movie";
 import { useWatchlist } from "../context/WatchlistContext";
 
@@ -29,7 +29,7 @@ export default function MovieDetails() {
         setLoading(true);
         const apiKey = import.meta.env.VITE_OMB_API_KEY;
         const res = await fetch(
-          `https://www.omdbapi.com/?i=${id}&apikey=${apiKey}`
+          `https://www.omdbapi.com/?i=${id}&apikey=${apiKey}`,
         );
         const data = await res.json();
 
