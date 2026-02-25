@@ -2,27 +2,25 @@ import { NavLink } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <nav className="sticky top-0 z-50 w-full bg-black/90 backdrop-blur-sm border-b border-white/10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+    <nav className="navbar">
+      <div className="navbar-container">
+        <div className="navbar-content">
           {/* Logo */}
-          <NavLink to="/" className="flex items-center gap-2 group">
-            <span className="text-2xl group-hover:scale-110 transition-transform">
+          <NavLink to="/" className="navbar-logo">
+            <span className="navbar-logo-icon">
               🎬
             </span>
-            <span className="font-bold text-xl tracking-tight text-white group-hover:text-primary transition-colors">
+            <span className="navbar-logo-text">
               MovieWatch
             </span>
           </NavLink>
 
           {/* Navigation Links */}
-          <div className="flex items-center gap-8">
+          <div className="navbar-links">
             <NavLink
               to="/"
               className={({ isActive }) =>
-                `text-sm font-medium transition-colors hover:text-primary ${
-                  isActive ? "text-primary" : "text-gray-300"
-                }`
+                `navbar-link ${isActive ? "navbar-link-active" : ""}`
               }
             >
               Home
@@ -30,9 +28,7 @@ export default function Navbar() {
             <NavLink
               to="/watchlist"
               className={({ isActive }) =>
-                `text-sm font-medium transition-colors hover:text-primary ${
-                  isActive ? "text-primary" : "text-gray-300"
-                }`
+                `navbar-link ${isActive ? "navbar-link-active" : ""}`
               }
             >
               Watchlist
